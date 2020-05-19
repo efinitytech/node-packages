@@ -24,7 +24,7 @@ Start listening for changes to the `document` and use the callback to list any c
 qob.for(target: Node): QOb
 ```
 Create a new `qob` function with a non-default (`document`) scope.  
- - `target`: the new `qob` function that scopes to this element instead of the default `document`.
+ - `target`: the new `qob` function will scope to this element instead of the default `document`.
 
 
 ### Structures
