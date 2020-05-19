@@ -13,11 +13,11 @@ qob(
 
 ```js
 ObservedMutationDictionary {
-    childList: MutationRecord[];
-    attributes: MutationRecord[];
-    characterData: MutationRecord[];
-    all(): MutationRecord[];
-    nodes(): Node[];
+    childList: MutationRecord[]
+    attributes: MutationRecord[]
+    characterData: MutationRecord[]
+    all(): MutationRecord[]
+    nodes(): Node[] 
 }
 ```
  - `childList`: All matched `MutationRecord`s with type `"childList"`.
@@ -41,6 +41,9 @@ qob('div#my-id', (records) => {
     .map(mutationRecord => mutationRecord.target)
 
     // All affected nodes from anywhere in the matched records.
-    const nodeArray = records.nodes();
+    const nodeArray = records.nodes()
 })
 ```
+
+## Help
+See [MutationObserver](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver) and [MutationRecord](https://developer.mozilla.org/en-US/docs/Web/API/MutationRecord) MDN docs for more information about the `MutationObserver` API.
