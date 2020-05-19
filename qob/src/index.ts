@@ -7,7 +7,7 @@ const nodeArray = (list: NodeList) => Array.prototype.slice.call(list);
  * @param qs A query selector.
  * @param cb A callback function for all matching MutationRecords.
  */
-const qob = (qs: string, cb: (rec: ObservedMutationDictionary) => void) => {
+const create = (target: Node) => (qs: string, cb: (rec: ObservedMutationDictionary) => void) => {
     if (!cb) {
         throw "Callback parameter is required."
     }
@@ -43,7 +43,7 @@ const qob = (qs: string, cb: (rec: ObservedMutationDictionary) => void) => {
         // Return results
         cb(result);
     });
-    observer.observe(document, {
+    observer.observe(target, {
         subtree: true,
         attributes: true,
         childList: true,
@@ -52,12 +52,10 @@ const qob = (qs: string, cb: (rec: ObservedMutationDictionary) => void) => {
     return observer;
 }
 
-interface ObservedMutationDictionary {
-    childList: MutationRecord[]
-    attributes: MutationRecord[]
-    characterData: MutationRecord[]
-    all(): MutationRecord[]
-    nodes(): Node[]
-}
+const qob = ((): QOb => {
+    const res: any = create(document);
+    res.for = create;
+    return res;
+})()
 
 export default qob;

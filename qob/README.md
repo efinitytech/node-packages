@@ -4,15 +4,30 @@ Listen for DOM changes to elements that match a given query selector.
 [![npm version](https://img.shields.io/npm/v/qob.svg?style=flat)](https://npmjs.org/package/qob "View this project on npm")
 
 ## API
-```js
+API docs for v0.2.x.
+
+### Functions
+
+#### qob()
+```ts
 qob(
     querySelector: string, 
     callback: (matched: ObservedMutationDictionary) => void
-) => MutationObserver
+): MutationObserver
 ```
+Start listening for changes to the `document` and use the callback to list any changes to elements matching the query selector.  
  - `querySelector`: used to match `MutationRecords` created from DOM changes.
  - `callback`: called when the inner `MutationObserver` observes some event. Takes one `ObservedMutationDictionary` as a parameter.  
 
+#### qob.for()
+```ts
+qob.for(target: Node): QOb
+```
+Create a new `qob` function with a non-default (`document`) scope.  
+ - `target`: the new `qob` function that scopes to this element instead of the default `document`.
+
+
+### Structures
 ```js
 ObservedMutationDictionary {
     childList: MutationRecord[]
