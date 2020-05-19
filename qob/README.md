@@ -1,6 +1,8 @@
 # qob (Query'd Observer)
 Listen for DOM changes to elements that match a given query selector.
 
+[![npm version](https://img.shields.io/npm/v/qob.svg?style=flat)](https://npmjs.org/package/qob "View this project on npm")
+
 ## API
 ```js
 qob(
