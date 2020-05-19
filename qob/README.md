@@ -60,6 +60,8 @@ qob('div#my-id', (records) => {
     // All affected nodes from anywhere in the matched records.
     const nodeArray = records.nodes()
 })
+
+const qobScopedToElement = qob.for(document.getElementById('example') || document)
 ```
 
 ## Help
