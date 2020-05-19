@@ -1,6 +1,6 @@
 {
   "name": "qob",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Listen and react to changes in the DOM. This package wraps the MutationObserver API.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
