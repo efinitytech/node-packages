@@ -43,12 +43,15 @@ const create = (target: Node) => (qs: string, cb: (rec: ObservedMutationDictiona
 
         // Check each mutation for matching elements
         mutations.forEach(mutation => {
-            const canValidateTarget = mutation.target instanceof HTMLElement && mutation.target.matches(qs);
-            const inAddedNodes = !!nodeArray(mutation.addedNodes)
-                .find(n => n instanceof HTMLElement && n.matches(qs));
-            const inRemovedNodes = !!nodeArray(mutation.removedNodes)
-                .find(n => n instanceof HTMLElement && n.matches(qs));
-            if (canValidateTarget || inAddedNodes || inRemovedNodes) {
+            const canValidateTarget =
+                () => mutation.target instanceof HTMLElement && mutation.target.matches(qs);
+            const inAddedNodes =
+                () => !!nodeArray(mutation.addedNodes)
+                    .find(n => n instanceof HTMLElement && n.matches(qs));
+            const inRemovedNodes =
+                () => !!nodeArray(mutation.removedNodes)
+                    .find(n => n instanceof HTMLElement && n.matches(qs));
+            if (canValidateTarget() || inAddedNodes() || inRemovedNodes()) {
                 result[mutation.type].push(mutation);
             }
         })
