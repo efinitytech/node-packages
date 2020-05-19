@@ -1,6 +1,6 @@
 {
   "name": "qob",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Listen and react to changes in the DOM. This package wraps the MutationObserver API.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -13,10 +13,14 @@
     "release": "npm publish --access public"
   },
   "repository": {
-    "type": "",
-    "url": ""
+    "type": "git",
+    "url": "https://github.com/efinitytech/node-packages/tree/master/qob"
   },
-  "keywords": [],
+  "keywords": [
+    "MutationObserver",
+    "DOM",
+    "Events"
+  ],
   "author": "Efinity Technologies",
   "license": "MIT",
   "bugs": {},
