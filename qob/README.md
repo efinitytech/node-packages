@@ -21,7 +21,10 @@ Start listening for changes to the `document` and use the callback to list any c
 
 #### qob.for()
 ```ts
-qob.for(target: Node): (qs: string, cb: (rec: ObservedMutationDictionary) => void) => MutationObserver
+qob.for(target: Node): (
+    qs: string,
+    cb: (rec: ObservedMutationDictionary) => void
+) => MutationObserver
 ```
 Create a new `qob` function with a non-default (`document`) scope.  
  - `target`: the new `qob` function will scope to this element instead of the default `document`.
@@ -53,7 +56,7 @@ import qob from 'qob'
 qob('div#my-id', (records) => {
     // All matching events with type 'childList'
     records.childList.forEach(mutationRecord => {
-        // ...
+        // ...react to the mutations...
     })
 
     // All matching events with any type.
@@ -68,7 +71,8 @@ qob('div#my-id', (records) => {
 const element = document.getElementById('example')
 const qobScopedToElement = qob.for(element || document)
 
-// Assuming the element exists, observation begins at #example instead of document.
+// Assuming the element exists, 
+//  observation begins at #example instead of document.
 qobScopedToElement('.example-child', (records) => { /* ... */ })
 ```
 
