@@ -1,8 +1,38 @@
-# ts-npm-pkg (Template)
-Bare-bones template for developing TypeScript npm packages. ⚙
+# forkey
 
-## How to use this template
- - **Using GitHub** - click the green 'Use this template' button above.
- - **Using npm** - use [degit](https://www.npmjs.com/package/degit): `npx degit ConnorJamesLow/ts-npm-pkg-template my-ts-pkg`. _Note: you will need to set up your own repository structure._  
+## Usage
 
-Run `npm init -y` and `npm i typescript`, or use the _package.json.example_, and you are on your way.  
+### JSX
+```jsx
+import forkey from 'forkey';
+
+
+// in markup:
+<input onKeydown={forkey({ 
+    // Case-insensitive. Evaluating to true calls preventDefault on the event.
+    'enter': true,
+
+    // Custom handler.
+    ShiftLeft(e) => {
+        console.log('event:', e);
+
+        // Returning true will also call preventDefault on the event.
+        return true;
+    }
+})} />
+```
+
+### Browser
+```html
+<input id="target" />
+
+<script>
+    // preventDefault() on Enter key.
+    const fn = forkey({
+        'Enter': true
+    });
+
+    document.getElementById('#target')
+        .addEventListenter('keydown', fn);
+</script>
+```
