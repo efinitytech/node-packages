@@ -1,0 +1,27 @@
+{
+  "name": "@efinitytech/forkey",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.js",
+  "typings": "dist/index",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run dev",
+    "dev": "npx tsc --watch",
+    "build": "npx tsc",
+    "prepare": "npx tsc",
+    "release": "npm publish --access public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/efinitytech/node-packages/tree/master/forkey"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "",
+  "bugs": {},
+  "homepage": "",
+  "devDependencies": {
+    "typescript": "*"
+  }
+}
