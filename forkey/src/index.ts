@@ -1,7 +1,7 @@
-type BooleanKeyboardEventHandler = (e?: KeyboardEvent) => boolean;
+type FunctionAcceptsKeyboardEventReturnsBoolean = (e?: KeyboardEvent) => boolean;
 
 type KeyMap = {
-    [p: string]: boolean | BooleanKeyboardEventHandler
+    [p: string]: boolean | FunctionAcceptsKeyboardEventReturnsBoolean
 };
 
 const forkey = (km: KeyMap) => (e: KeyboardEvent) => {
