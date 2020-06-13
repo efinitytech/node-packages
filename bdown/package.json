@@ -1,0 +1,31 @@
+{
+  "name": "@efinitytech/bdown",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.js",
+  "typings": "dist/index",
+  "scripts": {
+    "test": "npx tsc & npx mocha ./dist --recursive",
+    "start": "npm run dev",
+    "dev": "npx tsc --watch",
+    "build": "npx rimraf ./dist & npx tsc",
+    "prepare": "npm build",
+    "release": "npm publish --access public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/efinitytech/bdown"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "",
+  "bugs": {},
+  "homepage": "",
+  "devDependencies": {
+    "typescript": "*",
+    "mocha": "*",
+    "chai": "*",
+    "@types/mocha": "*",
+    "@types/chai": "*"
+  }
+}
