@@ -16,8 +16,14 @@
     "type": "git",
     "url": "https://github.com/efinitytech/bdown"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "download",
+    "browser"
+  ],
+  "author": "efinitytech",
+  "files": [
+    "dist/"
+  ],
   "license": "",
   "bugs": {},
   "homepage": "",

@@ -24,8 +24,6 @@ const getCSVBody = <T>(json: T[], keys: (keyof T)[]) => json.map(i => {
 }).join('\n');
 
 const serializeArray = (v: any[]) => `"${v.join(',')}"`;
-const serializeString = (v: string) => v.includes(',')
-    ? `"${v}"`
-    : v;
+const serializeString = (v: string) => v.includes(',') ? `"${v}"` : v;
 
 export default jcsv;
