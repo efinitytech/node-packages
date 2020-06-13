@@ -1,8 +1,22 @@
-# ts-npm-pkg (Template)
-Bare-bones template for developing TypeScript npm packages. ⚙
+# JCSV
+Convert JSON to CSV format.
 
-## How to use this template
- - **Using GitHub** - click the green 'Use this template' button above.
- - **Using npm** - use [degit](https://www.npmjs.com/package/degit): `npx degit ConnorJamesLow/ts-npm-pkg-template my-ts-pkg`. _Note: you will need to set up your own repository structure._  
+[![npm version](https://img.shields.io/npm/v/@efinitytech/jcsv.svg?style=flat)](https://npmjs.org/package/@efinitytech/jcsv "View this project on npm")
 
-Run `npm init -y` and `npm i typescript`, or use the _package.json.example_, and you are on your way.  
+## Usage
+```js
+const data = [
+    { name: 'John', age: 21 },
+    { name: 'Kyle', age: 24 },
+    { name: 'Linda', age: 23 }
+];
+
+const csvString = jcsv(data);
+/* output: 
+ *"name,age
+ * John,21
+ * Kyle,24
+ * Linda,23"
+ */
+```
+
