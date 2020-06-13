@@ -9,7 +9,7 @@
     "start": "npm run dev",
     "dev": "npx tsc --watch",
     "build": "npx rimraf ./dist & npx tsc",
-    "prepare": "npm build",
+    "prepare": "npm run build",
     "release": "npm publish --access public"
   },
   "repository": {
