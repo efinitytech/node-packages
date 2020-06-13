@@ -1,7 +1,7 @@
 # forkey
 Map actions to keys in KeyboardEvents.  
 
-[![npm version](https://img.shields.io/npm/v/@efinitytech/forkey.svg?style=flat)](https://npmjs.org/package/forkey "View this project on npm")
+[![npm version](https://img.shields.io/npm/v/@efinitytech/forkey.svg?style=flat)](https://npmjs.org/package/@efinitytech/forkey "View this project on npm")
 
 ## Usage
 `forkey(km: KeyMap): (e: KeyboardEvent) => void` 
