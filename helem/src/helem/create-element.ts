@@ -1,8 +1,9 @@
-export function createElement<T extends HTMLElement = HTMLElement>(tag: string, attr?: Partial<T>, createOptions?: ElementCreationOptions) {
+export function createElement<T extends HTMLElement = HTMLElement>(tag: string, props?: Partial<T>, attr?: { [qualifiedName: string]: any }, createOptions?: ElementCreationOptions) {
     const element = document.createElement(tag, createOptions ?? {}) as T;
-    if (attr) {
-        for (const a in attr) {
-            const value = attr[a];
+    if (props) {
+        // Element properties
+        for (const a in props) {
+            const value = props[a];
             if (typeof value === 'object') {
                 for (const k in value) {
                     element[a][k] = value[k] as any;
@@ -10,6 +11,11 @@ export function createElement<T extends HTMLElement = HTMLElement>(tag: string, 
             } else {
                 element[a] = value as any;
             }
+        }
+
+        // Attributes
+        for (const k in attr) {
+            element.setAttribute(k, attr[k]);
         }
     }
 

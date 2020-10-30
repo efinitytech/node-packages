@@ -1,9 +1,9 @@
 {
   "name": "@efinitytech/helem",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "",
   "main": "dist/web/index.js",
-  "typings": "dist/index",
+  "typings": "dist/types/helem/index.d.ts",
   "scripts": {
     "test": "npx tsc & npx mocha ./dist --recursive",
     "start": "npm run dev",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/efinitytech/helem"
+    "url": "https://github.com/efinitytech/node-packages/tree/master/helem"
   },
   "keywords": [],
   "author": "",

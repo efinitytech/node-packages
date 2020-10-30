@@ -5,7 +5,7 @@ Create DOM elements in one step.
 
 ## Installation
  - `npm i helem` for webpack/your favorite web-bundler.
- - `<script src="https://unpkg.com/helem@0.1.0/web/index.js">` for browser iife library.
+ - `<script src="https://unpkg.com/@efinitytech/helem">` for browser iife library.
 
 
 ## Usage
@@ -13,7 +13,7 @@ Behaves like `document.createElement`, but allows you to provide attributes, eve
 
 ```js
 const element = helem.el('div', { 
-    attr: { 
+    props: { 
         innerHTML: '<h1>Hello there</h1>' 
     },
     events: {
@@ -35,25 +35,28 @@ Use `helem.el` to create an element:
 
 ```js
 const element = helem.el('div', {
-    attr: {
+    props: {
         id: 'example-div'
     }
 }, [
     helem.el('h1', ['Hello there']),
     helem.el('button', {
-        attr: {
+        props: {
             style: {
                 border: 'none',
                 padding: '0.5rem'
             },
             innerText: 'Click me'
         },
+        attr: {
+            // ... for `Element.setAttribute`
+        },
         events: {
             'click': [
                 () => console.log('clicked!'),
                 (e) => e.target.after(
                     helem.el('span', {
-                        attr: {
+                        props: {
                             dataset: {
                                 clicked: Date.now()
                             }

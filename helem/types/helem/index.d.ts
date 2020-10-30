@@ -1,7 +1,8 @@
 type EventHandler = [string, EventListener];
 
 interface ElementConfiguration<T extends HTMLElement> {
-    attr?: Partial<T>
+    props?: Partial<T>
+    attr?: { [qualifiedName: string]: any }
     createOptions?: ElementCreationOptions
     events?: { [name: string]: EventListener | EventListener[] }
 }

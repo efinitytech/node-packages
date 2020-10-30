@@ -11,7 +11,7 @@ function helem<T extends HTMLElement = HTMLElement>(tag: string, p0?: ComponentC
     let config = Array.isArray(p0) ? null : p0;
     let children = Array.isArray(p0) ? p0 : p1;
 
-    const { attr, events, css, createOptions } = config ?? {};
+    const { props, attr, events, css, createOptions } = config ?? {};
 
     // Generate class and styles if necessary:
     const className = generateClass();
@@ -23,7 +23,7 @@ function helem<T extends HTMLElement = HTMLElement>(tag: string, p0?: ComponentC
     // Return creation function
     return () => {
         // Create the element:
-        const element = el<T>(tag, { attr, events, createOptions }, children);
+        const element = el<T>(tag, { props, attr, events, createOptions }, children);
 
         // Apply styles
         if (css) {

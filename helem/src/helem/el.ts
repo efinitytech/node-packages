@@ -8,10 +8,9 @@ function el<T extends HTMLElement = HTMLElement>(tag: string, p0?: ElementConfig
     let config = Array.isArray(p0) ? null : p0;
     let children = Array.isArray(p0) ? p0 : p1;
 
-
     // Create the element:
-    const { attr, events, createOptions } = config ?? {};
-    const element = createElement<T>(tag, attr, createOptions);
+    const { props, attr, events, createOptions } = config ?? {};
+    const element = createElement<T>(tag, props, attr, createOptions);
 
     // Apply event listeners
     if (events) {
