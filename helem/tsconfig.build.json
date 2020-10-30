@@ -1,0 +1,10 @@
+{
+    "extends": "./tsconfig.json",
+    "exclude": [
+        "src/**/*.test.ts"
+    ],
+    "files": [
+        "./src/index.ts",
+        "./types/helem/index.d.ts"
+    ]
+}
