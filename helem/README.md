@@ -1,11 +1,11 @@
 # Helem
 Create DOM elements in one step.  
 
-[![npm version](https://img.shields.io/npm/v/helem.svg?style=flat)](https://npmjs.org/package/@efinitytech/helem "View this project on npm")
+[![npm version](https://img.shields.io/npm/v/helem.svg?style=flat-square)](https://npmjs.org/package/@efinitytech/helem "View this project on npm")
 
 ## Installation
  - `npm i helem` for webpack/your favorite web-bundler.
- - `<script src="https://unpkg.com/@efinitytech/helem">` for browser iife library.
+ - `<script src="https://unpkg.com/@efinitytech/helem/dist/web">` for browser iife library.
 
 
 ## Usage

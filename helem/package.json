@@ -1,8 +1,8 @@
 {
   "name": "@efinitytech/helem",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "",
-  "main": "dist/web/index.js",
+  "main": "dist/index.js",
   "typings": "dist/types/helem/index.d.ts",
   "scripts": {
     "test": "npx tsc & npx mocha ./dist --recursive",
