@@ -30,8 +30,8 @@ function typescript(cb) {
     dts.pipe(gulp.dest('dist'));
 }
 
-function iife() {
-    return gulp.src('dist/index.js')
+function iife(cb) {
+    gulp.src('dist/index.js')
         .pipe(webpack({
             mode: 'production',
             output: {
@@ -39,6 +39,9 @@ function iife() {
                 library: 'helem',
                 libraryTarget: 'window',
                 libraryExport: 'default'
+            },
+            optimization: {
+                minimize: false
             }
         }))
         .pipe(babel({
@@ -50,8 +53,9 @@ function iife() {
                 }]
             ]
         }))
+        .pipe(gulp.dest('dist/web/development/'))
         .pipe(terser())
-        .pipe(gulp.dest('dist/web/'));
+        .pipe(gulp.dest('dist/web/').on('end', cb))
 }
 
 exports.typescript = typescript;
