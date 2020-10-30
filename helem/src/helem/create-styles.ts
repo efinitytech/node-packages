@@ -1,3 +1,5 @@
+import { JSS } from "./create-element";
+
 export function createStyles(className: string, css: JSS) {
     const style = document.createElement('style') as HTMLStyleElement;
     style.id = `s-${className}`;

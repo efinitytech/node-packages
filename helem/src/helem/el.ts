@@ -1,4 +1,4 @@
-import { createElement } from "./create-element";
+import { createElement, ElementConfiguration } from "./create-element";
 
 function el<T extends HTMLElement = HTMLElement>(tag: string): T
 function el<T extends HTMLElement = HTMLElement>(tag: string, options: ElementConfiguration<T>, children?: Child[]): T
@@ -41,3 +41,5 @@ function el<T extends HTMLElement = HTMLElement>(tag: string, p0?: ElementConfig
 }
 
 export default el;
+
+export type Child = HTMLElement | string | (() => HTMLElement) | (() => string)

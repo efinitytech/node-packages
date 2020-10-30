@@ -1,7 +1,7 @@
 import generateClass from "../generate-class";
-import { createElement } from "./create-element";
+import { createElement, ElementConfiguration, JSS } from "./create-element";
 import { createStyles } from "./create-styles";
-import el from "./el";
+import el, { Child } from "./el";
 
 function helem<T extends HTMLElement = HTMLElement>(tag: string): () => T
 function helem<T extends HTMLElement = HTMLElement>(tag: string, options: ComponentConfiguration<T>, children?: Child[]): () => T
@@ -37,6 +37,8 @@ function helem<T extends HTMLElement = HTMLElement>(tag: string, p0?: ComponentC
     }
 }
 
-
-
 export default helem;
+
+export interface ComponentConfiguration<T extends HTMLElement> extends ElementConfiguration<T> {
+    css?: JSS
+}

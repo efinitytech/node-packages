@@ -21,3 +21,13 @@ export function createElement<T extends HTMLElement = HTMLElement>(tag: string, 
 
     return element;
 }
+
+export interface ElementConfiguration<T extends HTMLElement> {
+    props?: Partial<T>
+    attr?: { [qualifiedName: string]: any }
+    createOptions?: ElementCreationOptions
+    events?: { [name: string]: EventListener | EventListener[] }
+}
+
+export type JSS = { [selector: string]: Partial<ExtractType<CSSStyleDeclaration, string>> }
+
