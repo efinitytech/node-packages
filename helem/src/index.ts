@@ -9,11 +9,3 @@ export default helem as HelemModule;
 interface HelemModule extends Helem {
     el: typeof el
 }
-
-(helem as HelemModule)('div', {
-    css: {
-        '': {
-
-        }
-    }
-})
