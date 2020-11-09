@@ -14,7 +14,6 @@ const clean = () => new Promise(cb => {
     });
 })
 
-
 function typescript(cb) {
     // Build ts to js:
     const { js, dts } = tsProject
@@ -23,8 +22,17 @@ function typescript(cb) {
 
     // JavaScript output (signal complete afterward):
     js.pipe(gulp
-        .dest("dist")
-        .on('end', cb))
+        .dest('dist')
+        .on('end', function () {
+            return gulp.src('./types/helem/*.d.ts')
+                .pipe(gulp
+                    .dest('./dist/types/helem')
+                    .on('end', () => {
+                        console.log('Types coppied')
+                        return cb();
+                    }))
+        })
+    );
 
     // Declaration files:
     dts.pipe(gulp.dest('dist'));

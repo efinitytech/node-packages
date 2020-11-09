@@ -28,6 +28,3 @@ export interface ElementConfiguration<T extends HTMLElement> {
     createOptions?: ElementCreationOptions
     events?: { [name: string]: EventListener | EventListener[] }
 }
-
-export type JSS = { [selector: string]: Partial<ExtractType<CSSStyleDeclaration, string>> }
-

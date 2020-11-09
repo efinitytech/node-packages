@@ -1,12 +1,16 @@
 import generateClass from "../generate-class";
-import { createElement, ElementConfiguration, JSS } from "./create-element";
-import { createStyles } from "./create-styles";
+import { ElementConfiguration } from "./create-element";
+import { createStyles, JSS } from "./create-styles";
 import el, { Child } from "./el";
 
-function helem<T extends HTMLElement = HTMLElement>(tag: string): () => T
-function helem<T extends HTMLElement = HTMLElement>(tag: string, options: ComponentConfiguration<T>, children?: Child[]): () => T
-function helem<T extends HTMLElement = HTMLElement>(tag: string, children: Child[]): () => T
-function helem<T extends HTMLElement = HTMLElement>(tag: string, p0?: ComponentConfiguration<T> | Child[], p1?: Child[]): () => T {
+export interface Helem {
+    <T extends HTMLElement = HTMLElement>(tag: string): () => T
+    <T extends HTMLElement = HTMLElement>(tag: string, options: ComponentConfiguration<T>, children?: Child[]): () => T
+    <T extends HTMLElement = HTMLElement>(tag: string, children: Child[]): () => T
+    <T extends HTMLElement = HTMLElement>(tag: string, p0?: ComponentConfiguration<T> | Child[], p1?: Child[]): () => T
+}
+
+const helem: Helem = function<T extends HTMLElement = HTMLElement>(tag: string, p0?: ComponentConfiguration<T> | Child[], p1?: Child[]): () => T {
     // Determine input types:
     let config = Array.isArray(p0) ? null : p0;
     let children = Array.isArray(p0) ? p0 : p1;
