@@ -32,7 +32,7 @@ function el<T extends HTMLElement = HTMLElement>(tag: string, p0?: ElementConfig
             if (c instanceof Element) {
                 element.appendChild(c)
             } else {
-                element.append(c);
+                element.innerHTML += c;
             }
         });
     }
