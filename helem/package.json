@@ -35,6 +35,6 @@
     "mocha": "*",
     "rimraf": "^3.0.2",
     "typescript": "*",
-    "webpack-stream": "^6.1.0"
+    "webpack-stream": "^7.0.0"
   }
 }
